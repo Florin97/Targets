@@ -30,11 +30,15 @@ class ChannelViewModel: ChannelViewModelProtocol {
         self.service = service
     }
     
+    @MainActor
     func fetchChannels() async {
         state = .loading
         do {
             let channels = try await service.fetchChannels()
-            let targetedChannels = channels.filter { $0.targetsIds.isDisjoint(with: selectedTargetsIds) }
+            let targetedChannels = channels.filter {
+                print($0.targetsIds.isDisjoint(with: selectedTargetsIds))
+                return !($0.targetsIds.isDisjoint(with: selectedTargetsIds))
+            }
             state = .loaded(channels: targetedChannels)
         } catch {
             state = .error(error: error)

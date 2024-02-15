@@ -20,6 +20,8 @@ protocol TargetsViewModelProtocol: ObservableObject {
     var selectedTargets: Set<String> { get set}
     var areTargetsSelected: Bool { get set }
     func fetchTargets() async
+    func targetIsSelected(target: Target) -> Bool
+    func toggleSelection(for target: Target)
 }
 
 class TargetsViewModel: TargetsViewModelProtocol {
@@ -46,7 +48,17 @@ class TargetsViewModel: TargetsViewModelProtocol {
         } catch {
             state = .error(error)
         }
-        
-        
+    }
+    
+    func targetIsSelected(target: Target) -> Bool {
+        selectedTargets.contains(target.id)
+    }
+    
+    func toggleSelection(for target: Target) {
+        if selectedTargets.contains(target.id) {
+            selectedTargets.remove(target.id)
+        } else {
+            selectedTargets.insert(target.id)
+        }
     }
 }

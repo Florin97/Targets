@@ -11,7 +11,7 @@ import SwiftUI
 struct CampaignTargetsApp: App {
     var body: some Scene {
         WindowGroup {
-            TargetsView(viewModel: TargetsViewModel())
+            CampaignVIew(viewModel: CampaignViewModel(channelId: "1"))
         }
     }
 }

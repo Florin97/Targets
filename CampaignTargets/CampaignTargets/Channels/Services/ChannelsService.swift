@@ -18,21 +18,16 @@ class ChannelsService: ChannelsServiceProtocol {
     }
 }
 
-let channel1 = Channel(id: "1", targetId: ["1"], name: "Facebook")
-
+let channel1 = Channel(id: "1", targetsIds: ["1"], name: "Facebook")
 
 //Target(id: "16", name: "Facebook"),
 let channels = [
-    Channel(id: "1", targetId: ["1","2","3","4","5"],  name: "LinkedIn"),
-Channel(id: "1", targetId: ["1","2","3","6"],  name: "Twitter"),
-Channel(id: "1", targetId: ["1"], name: "Instagram"),
-Channel(id: "1", targetId: ["1"], name: "Google AdWords"),
-Channel(id: "1", targetId: ["1"], name: "Email Support"),
-Channel(id: "1", targetId: ["1"], name: "Monthly Reports"),
-Channel(id: "1", targetId: ["1"], name: "Installation"),
-Channel(id: "1", targetId: ["1"], name: "Conversion Monitoring"),
-Channel(id: "1", targetId: ["1"], name: "Landing Page"),
-Channel(id: "1", targetId: ["1"], name: "SEO")
+    Channel(id: "1", targetsIds: ["1","2","3","4","5"], name: "Facebook"),
+    Channel(id: "2", targetsIds: ["1","2","3","4","5"],  name: "LinkedIn"),
+    Channel(id: "3", targetsIds: ["1","2","3","4","5","10"],  name: "Twitter"),
+    Channel(id: "4", targetsIds: ["1","2","3","4","11"], name: "Instagram"),
+    Channel(id: "5", targetsIds: ["1","2","3","12","13","14"], name: "Google AdWords"),
+    Channel(id: "6", targetsIds: ["7","13","15"], name: "SEO")
 ]
 //let mockTargets = [
 //    Target(id: "1", name: "Location"),

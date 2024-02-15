@@ -9,26 +9,34 @@ import SwiftUI
 
 struct TargetsView<ViewModelType: TargetsViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModelType
-
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             switch viewModel.state {
             case .idle, .loading:
                 ProgressView("Loading targets")
             case .loaded(let targets):
-                List(targets,id: \.id, selection: $viewModel.selectedTargets) { target in
-                    Text(target.name)
-                }
-                .environment(\.editMode, .constant(.active))
-                .navigationBarTitle("Targets")
-                .toolbar {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(targets, id: \.id) { target in
+                            TargetCell(targetName: target.name, isSelected: viewModel.targetIsSelected(target: target))
+                                .onTapGesture {
+                                    viewModel.toggleSelection(for: target)
+                                }
+                                .padding(.horizontal)
+                                .cornerRadius(10)
+                        }
+                    }
+                }.toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: ChannelsView(viewModel: viewModel)) {
+                        NavigationLink(destination: ChannelsView(viewModel: ChannelViewModel(selectedTargetsIds: viewModel.selectedTargets))) {
                             Text("Next")
                         }
                         .disabled(!viewModel.areTargetsSelected)
                     }
                 }
+                .navigationBarTitle("Targets")
             case .error(let error):
                 Text("Error: \(error.localizedDescription)")
             }
@@ -39,17 +47,8 @@ struct TargetsView<ViewModelType: TargetsViewModelProtocol>: View {
     }
 }
 
-struct ChannelsView<ViewModelType: TargetsViewModelProtocol>: View {
-    @StateObject var viewModel: ViewModelType
-    
-    var body: some View {
-        Text("")
-    }
-}
-
 
 #Preview {
     TargetsView(viewModel: TargetsViewModel())
-    //    MultiSelectListView()
 }
 
