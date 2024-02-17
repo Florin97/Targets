@@ -33,8 +33,10 @@ class CampaignViewModel: CampaignViewModelProtocol {
     func fetchPackages() async {
         state = .loading
         do {
+            print("fetchPachage")
             let packages = try await service.fetchPackages(byChannelId: channelId)
             state = .loaded(packages: packages)
+            print("fetchPachage", packages)
         } catch {
             state = .error(error: error)
         }

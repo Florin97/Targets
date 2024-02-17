@@ -9,10 +9,9 @@ import SwiftUI
 
 struct TargetsView<ViewModelType: TargetsViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModelType
-    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             switch viewModel.state {
             case .idle, .loading:
                 ProgressView("Loading targets")
@@ -37,6 +36,7 @@ struct TargetsView<ViewModelType: TargetsViewModelProtocol>: View {
                     }
                 }
                 .navigationBarTitle("Targets")
+                
             case .error(let error):
                 Text("Error: \(error.localizedDescription)")
             }

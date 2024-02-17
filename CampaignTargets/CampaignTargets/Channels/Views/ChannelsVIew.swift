@@ -17,22 +17,18 @@ struct ChannelsView<ViewModelType: ChannelViewModelProtocol>: View {
                 ProgressView("Loading channels")
             case .loaded(let channels):
                 List(channels) { channel in
-                    Text(channel.name)
-                        .onTapGesture {
-                            
-                        }
+                    NavigationLink(destination: CampaignView(viewModel: CampaignViewModel(channelId: channel.id))) {
+                        Text(channel.name)
+                    }
                 }
                 .navigationTitle("Select channel")
             case .error(let error):
                 Text(error.localizedDescription)
             }
+            
         }
         .task {
             await viewModel.fetchChannels()
         }
     }
-}
-
-#Preview {
-    ChannelsView(viewModel: ChannelViewModel(selectedTargetsIds: ["1"]))
 }
