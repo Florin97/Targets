@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "name": "Location"
+    },
+    {
+        "id": "2",
+        "name": "Age"
+    },
+    {
+        "id": "3",
+        "name": "Sex"
+    },
+    {
+        "id": "4",
+        "name": "Spoken Languages"
+    },
+    {
+        "id": "5",
+        "name": "Events"
+    },
+    {
+        "id": "6",
+        "name": "Company"
+    },
+    {
+        "id": "7",
+        "name": "Industry"
+    },
+    {
+        "id": "8",
+        "name": "Expertise"
+    },
+    {
+        "id": "9",
+        "name": "Education"
+    },
+    {
+        "id": "10",
+        "name": "Technology"
+    },
+    {
+        "id": "11",
+        "name": "Interests"
+    },
+    {
+        "id": "12",
+        "name": "Device"
+    },
+    {
+        "id": "13",
+        "name": "Keywords"
+    },
+    {
+        "id": "14",
+        "name": "Similar Products/Services"
+    },
+    {
+        "id": "15",
+        "name": "Hyperlinks"
+    }
+]
