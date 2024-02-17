@@ -14,17 +14,18 @@ protocol ChannelsServiceProtocol {
 class ChannelsService: ChannelsServiceProtocol {
     
     func fetchChannels() async throws -> [Channel] {
-        channels
+        guard let url = URL(string: "https://raw.githubusercontent.com/Florin97/Targets/main/CampaignTargets/Channels.json") else {
+            throw NetworkError.urlError
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NetworkError.serverError
+        }
+        
+        let channels = try JSONDecoder().decode([Channel].self, from: data)
+        return channels
+        
     }
 }
-
-let channel1 = Channel(id: "1", targetsIds: ["1"], name: "Facebook")
-
-let channels = [
-    Channel(id: "1", targetsIds: ["1","2","3","4","5"], name: "Facebook"),
-    Channel(id: "2", targetsIds: ["1","2","3","4","5"],  name: "LinkedIn"),
-    Channel(id: "3", targetsIds: ["1","2","3","4","5","10"],  name: "Twitter"),
-    Channel(id: "4", targetsIds: ["1","2","3","4","11"], name: "Instagram"),
-    Channel(id: "5", targetsIds: ["1","2","3","12","13","14"], name: "Google AdWords"),
-    Channel(id: "6", targetsIds: ["7","13","15"], name: "SEO")
-]
