@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "targetsIds": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "name": "Facebook"
+    },
+    {
+        "id": "2",
+        "targetsIds": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "name": "LinkedIn"
+    },
+    {
+        "id": "3",
+        "targetsIds": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10"
+        ],
+        "name": "Twitter"
+    },
+    {
+        "id": "4",
+        "targetsIds": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "11"
+        ],
+        "name": "Instagram"
+    },
+    {
+        "id": "5",
+        "targetsIds": [
+            "1",
+            "2",
+            "3",
+            "12",
+            "13",
+            "14"
+        ],
+        "name": "Google AdWords"
+    },
+    {
+        "id": "6",
+        "targetsIds": [
+            "7",
+            "13",
+            "15"
+        ],
+        "name": "SEO"
+    }
+]

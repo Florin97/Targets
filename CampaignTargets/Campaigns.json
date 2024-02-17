@@ -1,0 +1,105 @@
+{
+    "camp1": [
+        {
+            "id": "fb1",
+            "channelID": "1",
+            "price": 299.0,
+            "benefits": [
+                "Ad Listings",
+                "Campaign Optimization",
+                "Monthly Reports"
+            ]
+        },
+        {
+            "id": "fb2",
+            "channelID": "1",
+            "price": 349.0,
+            "benefits": [
+                "Advanced Targeting",
+                "Conversion Tracking"
+            ]
+        },
+        {
+            "id": "fb3",
+            "channelID": "1",
+            "price": 349.0,
+            "benefits": [
+                "Advanced Targeting",
+                "Conversion Tracking"
+            ]
+        },
+        {
+            "id": "fb4",
+            "channelID": "1",
+            "price": 349.0,
+            "benefits": [
+                "Advanced Targeting",
+                "Conversion Tracking"
+            ]
+        },
+        {
+            "id": "fb5",
+            "channelID": "1",
+            "price": 349.0,
+            "benefits": [
+                "Advanced Targeting",
+                "Conversion Tracking"
+            ]
+        }
+    ],
+    "camp2": [
+        {
+            "id": "li1",
+            "channelID": "2",
+            "price": 399.0,
+            "benefits": [
+                "Lead Generation",
+                "Profile Optimization"
+            ]
+        }
+    ],
+    "camp3": [
+        {
+            "id": "tw1",
+            "channelID": "3",
+            "price": 249.0,
+            "benefits": [
+                "Brand Awareness",
+                "Engagement Analysis"
+            ]
+        }
+    ],
+    "camp4": [
+        {
+            "id": "ig1",
+            "channelID": "4",
+            "price": 299.0,
+            "benefits": [
+                "Visual Content Creation",
+                "Hashtag Strategy"
+            ]
+        }
+    ],
+    "camp5": [
+        {
+            "id": "ga1",
+            "channelID": "5",
+            "price": 499.0,
+            "benefits": [
+                "PPC Campaigns",
+                "Keyword Research"
+            ]
+        }
+    ],
+    "camp6": [
+        {
+            "id": "seo1",
+            "channelID": "6",
+            "price": 599.0,
+            "benefits": [
+                "On-page SEO",
+                "Backlink Strategy"
+            ]
+        }
+    ]
+}
